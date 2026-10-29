@@ -1,0 +1,2217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171714">
+
+<title>Crave & Co. | Restaurant, Cafe & Food</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f8f7f2;
+  --dark: #171714;
+  --green: #354d36;
+  --orange: #ed7953;
+  --muted: #77776f;
+  --white: #fff;
+  --border: #e8e6de;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+/* ANNOUNCEMENT */
+
+.announcement {
+  padding: 10px;
+  text-align: center;
+  background: var(--green);
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248,247,242,.94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--orange);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+  font-size: 13px;
+}
+
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-button, .menu-toggle {
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 30px;
+  padding: 11px 15px;
+  font-weight: 600;
+}
+
+.cart-button span {
+  color: var(--orange);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 19px;
+}
+
+/* HERO */
+
+.hero {
+  padding: 58px 0 75px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.eyebrow {
+  color: var(--green);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(43px, 5.2vw, 70px);
+  line-height: 1.09;
+  letter-spacing: -2px;
+  font-weight: 600;
+}
+
+.hero h1 em {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+.hero-description {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+  margin: 24px 0 30px;
+  max-width: 430px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 23px;
+  border-radius: 5px;
+  border: 1px solid var(--dark);
+  background: var(--dark);
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  transition: .25s;
+}
+
+.button:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--dark);
+  margin-left: 9px;
+}
+
+.button-outline:hover {
+  color: white;
+}
+
+.hero-note {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  margin-top: 38px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatars span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-left: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  background: #e8d1b9;
+  font-size: 10px;
+}
+
+.avatars span:first-child {
+  margin-left: 0;
+}
+
+.hero-image-wrap {
+  position: relative;
+}
+
+.hero-image {
+  height: 485px;
+  border-radius: 180px 180px 12px 12px;
+  object-position: center;
+}
+
+.floating-card {
+  position: absolute;
+  bottom: 25px;
+  left: -35px;
+  background: white;
+  padding: 18px 22px;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px #00000012;
+}
+
+.floating-card strong {
+  display: block;
+  font-size: 21px;
+}
+
+.floating-card small {
+  color: var(--muted);
+}
+
+/* BENEFITS */
+
+.benefits {
+  background: white;
+  border-block: 1px solid var(--border);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 27px 24px;
+  border-right: 1px solid var(--border);
+}
+
+.benefit:last-child {
+  border: 0;
+}
+
+.benefit-icon {
+  font-size: 27px;
+}
+
+.benefit strong {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.benefit p {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* SECTION HEADINGS */
+
+.section {
+  padding: 95px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 13px;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(33px, 4vw, 47px);
+  font-weight: 600;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* CATEGORY FILTERS */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  transition: .2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+/* FOOD CARDS */
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.food-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #0000000a;
+}
+
+.food-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.food-image {
+  height: 225px;
+  transition: .4s;
+}
+
+.food-card:hover .food-image {
+  transform: scale(1.04);
+}
+
+.food-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: white;
+  padding: 7px 10px;
+  font-size: 10px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.food-content {
+  padding: 21px;
+}
+
+.food-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+
+.food-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+}
+
+.rating {
+  color: #bc7627;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.food-description {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 11px 0 20px;
+}
+
+.food-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 19px;
+}
+
+.add-btn {
+  background: var(--green);
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 11px 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  background: var(--orange);
+}
+
+.empty-state {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+}
+
+/* ABOUT */
+
+.about {
+  background: #eeeee6;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.about-image {
+  height: 430px;
+  border-radius: 8px;
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.2;
+}
+
+.about p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 20px 0;
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.stat strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 29px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* CAFE */
+
+.cafe-banner {
+  background: var(--green);
+  color: white;
+  padding: 65px 0;
+}
+
+.cafe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.cafe-grid h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4.5vw, 52px);
+  line-height: 1.2;
+}
+
+.cafe-grid p {
+  color: #e1e8dd;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+.cafe-grid .button {
+  background: white;
+  color: var(--green);
+  border-color: white;
+}
+
+.cafe-image {
+  height: 340px;
+  border-radius: 7px;
+}
+
+/* REVIEWS */
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.review-card {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 27px;
+  border-radius: 8px;
+}
+
+.review-stars {
+  color: #c27c28;
+  letter-spacing: 3px;
+  margin-bottom: 17px;
+}
+
+.review-card p {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.review-author {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 23px;
+}
+
+/* VISIT */
+
+.visit {
+  background: white;
+  border-block: 1px solid var(--border);
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.visit h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 43px;
+  margin-bottom: 20px;
+}
+
+.visit-info {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.visit-info strong {
+  color: var(--dark);
+}
+
+.map-placeholder {
+  background: #e9e9df;
+  min-height: 300px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.map-placeholder span {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.map-placeholder p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 12px 0;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 55px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 45px;
+  padding-bottom: 40px;
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+  color: #b8b8b0;
+  font-size: 12px;
+  line-height: 2;
+}
+
+footer h4 {
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-bottom {
+  border-top: 1px solid #33332e;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 11px;
+  color: #b8b8b0;
+}
+
+/* CART DRAWER */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #0008;
+  opacity: 0;
+  visibility: hidden;
+  transition: .25s;
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -440px;
+  z-index: 201;
+  height: 100dvh;
+  width: min(420px, 100%);
+  background: var(--bg);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: .3s;
+}
+
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+}
+
+.close-cart {
+  border: 0;
+  background: transparent;
+  font-size: 25px;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid var(--border);
+  padding: 15px 0;
+}
+
+.cart-row strong {
+  font-size: 13px;
+}
+
+.cart-row small {
+  display: block;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quantity button {
+  width: 27px;
+  height: 27px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 4px;
+}
+
+.cart-total {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.checkout-btn {
+  width: 100%;
+  border: 0;
+  background: var(--green);
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  font-weight: 700;
+}
+
+.checkout-btn:hover {
+  background: var(--orange);
+}
+
+.cart-empty {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+/* ANIMATION */
+
+.reveal {
+  animation: reveal .7s ease both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .cafe-grid,
+  .visit-grid {
+    gap: 35px;
+  }
+
+  .hero-image {
+    height: 400px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: 91%;
+  }
+
+  .announcement {
+    font-size: 10px;
+  }
+
+  .nav {
+    height: 68px;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  .menu-toggle {
+    display: block;
+    padding: 8px 12px;
+  }
+
+  .nav-actions {
+    gap: 7px;
+  }
+
+  .cart-button {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--bg);
+    padding: 10px 5%;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero {
+    padding: 42px 0 55px;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .cafe-grid,
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-image {
+    height: 390px;
+    border-radius: 150px 150px 8px 8px;
+  }
+
+  .floating-card {
+    left: 10px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit {
+    padding: 20px 5px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .food-image {
+    height: 240px;
+  }
+
+  .about-grid,
+  .cafe-grid,
+  .visit-grid {
+    gap: 30px;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .cafe-image {
+    height: 260px;
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    gap: 20px;
+  }
+
+  .visit h2 {
+    font-size: 36px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1/-1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .button {
+    padding: 14px 17px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* FEEDBACK BUTTON */
+
+.feedback-nav-btn {
+  padding: 11px 15px;
+  border: 1px solid #354d36;
+  background: transparent;
+  color: #354d36;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .25s;
+  white-space: nowrap;
+}
+
+.feedback-nav-btn:hover {
+  background: #354d36;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* FEEDBACK MODAL */
+
+.feedback-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0, 0, 0, .6);
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.feedback-modal.active {
+  display: flex;
+}
+
+.feedback-box {
+  position: relative;
+  background: #f8f7f2;
+  width: 100%;
+  max-width: 440px;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 25px 80px #0003;
+  animation: feedbackAppear .25s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes feedbackAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.feedback-close {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 27px;
+  cursor: pointer;
+  color: #171714;
+}
+
+.feedback-box .feedback-label {
+  color: #ed7953;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.feedback-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.feedback-subtitle {
+  color: #77776f;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.feedback-field {
+  margin-bottom: 17px;
+}
+
+.feedback-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.feedback-field input,
+.feedback-field select,
+.feedback-field textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #e1dfd7;
+  background: white;
+  border-radius: 6px;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+}
+
+.feedback-field input:focus,
+.feedback-field select:focus,
+.feedback-field textarea:focus {
+  border-color: #354d36;
+  box-shadow: 0 0 0 3px #354d3615;
+}
+
+.feedback-field textarea {
+  resize: vertical;
+  min-height: 105px;
+}
+
+.feedback-stars {
+  display: flex;
+  gap: 9px;
+  margin: 8px 0;
+}
+
+.feedback-stars button {
+  background: transparent;
+  border: none;
+  color: #ccc8bd;
+  font-size: 31px;
+  padding: 0;
+  cursor: pointer;
+  transition: .15s;
+}
+
+.feedback-stars button.active,
+.feedback-stars button:hover {
+  color: #e5a33c;
+}
+
+.feedback-rating-text {
+  color: #77776f;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.feedback-submit {
+  width: 100%;
+  background: #354d36;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.feedback-submit:hover {
+  background: #ed7953;
+}
+
+.feedback-success {
+  display: none;
+  background: #e7efe4;
+  color: #354d36;
+  padding: 14px;
+  border-radius: 6px;
+  margin-top: 15px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+  .feedback-nav-btn {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .feedback-box {
+    padding: 26px 20px;
+  }
+
+  .feedback-box h2 {
+    font-size: 26px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+  GOOD FOOD. GOOD MOOD. MADE FRESH EVERY DAY.
+</div>
+
+<header>
+  <div class="container nav">
+
+    <a href="#" class="logo">crave<span>&</span>co.</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#menu">Our Menu</a>
+      <a href="#about">Our Story</a>
+      <a href="#cafe">The Café</a>
+      <a href="#visit">Find Us</a>
+    </nav>
+
+    <div class="nav-actions">
+  <button class="feedback-nav-btn" id="openFeedback">
+    ✍ Feedback
+  </button>
+
+  <button class="cart-button" id="openCart">
+    Bag <span id="cartCount">0</span>
+  </button>
+
+  <button class="menu-toggle" id="menuToggle"
+          aria-label="Toggle navigation">
+    ☰
+  </button>
+</div>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="reveal">
+      <div class="eyebrow">Your neighbourhood favourite</div>
+
+      <h1>
+        Good food.<br>
+        Great <em>moments.</em>
+      </h1>
+
+      <p class="hero-description">
+        From slow mornings with fresh coffee to delicious meals
+        shared with friends, discover your new favourite place
+        to eat, sip and stay a little longer.
+      </p>
+
+      <a href="#menu" class="button">Explore Our Menu ↗</a>
+
+      <a href="#visit" class="button button-outline">Visit Us</a>
+
+      <div class="hero-note">
+        <div class="avatars">
+          <span>😊</span>
+          <span>🍽️</span>
+          <span>☕</span>
+        </div>
+        <div>
+          <strong>Made with care, served with love.</strong>
+          <br>
+          Fresh flavours. Every single day.
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap reveal">
+      <img
+        class="hero-image"
+        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85"
+        alt="Beautiful restaurant dining experience"
+      >
+
+      <div class="floating-card">
+        <strong>4.9 ★</strong>
+        <small>Good food, happy people</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BENEFITS -->
+
+<section class="benefits">
+  <div class="container benefits-grid">
+
+    <div class="benefit">
+      <div class="benefit-icon">🥗</div>
+      <div>
+        <strong>Fresh Ingredients</strong>
+        <p>Freshly prepared with care</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-icon">☕</div>
+      <div>
+        <strong>Crafted With Love</strong>
+        <p>From coffee to comfort food</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="benefit-icon">🏡</div>
+      <div>
+        <strong>Your Happy Place</strong>
+        <p>Relax, connect and enjoy</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MENU -->
+
+<section class="section" id="menu">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Something delicious awaits</div>
+      <h2>Our crowd favourites</h2>
+      <p>Good ingredients. Beautiful flavours. Made fresh to order.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-category="All">All Items</button>
+      <button class="filter-btn" data-category="Food">Food</button>
+      <button class="filter-btn" data-category="Pizza">Pizza</button>
+      <button class="filter-btn" data-category="Burgers">Burgers</button>
+      <button class="filter-btn" data-category="Drinks">Drinks</button>
+      <button class="filter-btn" data-category="Desserts">Desserts</button>
+    </div>
+
+    <div class="food-grid" id="foodGrid"></div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section about" id="about">
+  <div class="container about-grid">
+
+    <div>
+      <img
+        class="about-image"
+        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85"
+        alt="Warm and welcoming restaurant interior"
+        loading="lazy"
+      >
+    </div>
+
+    <div>
+      <div class="eyebrow">A little about us</div>
+
+      <h2>More than a meal.<br>A feeling.</h2>
+
+      <p>
+        At Crave & Co., we believe the best memories often begin
+        around a table. That's why we bring together delicious
+        food, carefully prepared drinks and a welcoming atmosphere.
+      </p>
+
+      <p>
+        Whether you're meeting friends, enjoying a family dinner
+        or taking a peaceful coffee break, there's always a seat
+        waiting for you.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Made with care</span>
+        </div>
+
+        <div class="stat">
+          <strong>Daily</strong>
+          <span>Fresh preparation</span>
+        </div>
+
+        <div class="stat">
+          <strong>1</strong>
+          <span>Happy place</span>
+        </div>
+      </div>
+
+      <a href="#visit" class="button">Come Say Hello ↗</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CAFE -->
+
+<section class="cafe-banner" id="cafe">
+  <div class="container cafe-grid">
+
+    <div>
+      <div class="eyebrow" style="color:#e5b59f">
+        Slow mornings start here
+      </div>
+
+      <h2>Your daily dose<br>of coffee & calm.</h2>
+
+      <p>
+        Rich espresso, creamy cappuccinos and conversations
+        that last a little longer. Find your favourite corner
+        and make yourself at home.
+      </p>
+
+      <a href="#menu" class="button">Discover Our Drinks ↗</a>
+    </div>
+
+    <div>
+      <img
+        class="cafe-image"
+        src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=85"
+        alt="Coffee shop with a cosy atmosphere"
+        loading="lazy"
+      >
+    </div>
+
+  </div>
+</section>
+
+<!-- REVIEWS -->
+
+<section class="section" id="reviews">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Kind words, happy hearts</div>
+      <h2>Love from our guests</h2>
+      <p>Great food is even better when shared.</p>
+    </div>
+
+    <div class="review-grid">
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>
+          "A lovely place to enjoy good food and spend quality
+          time. The atmosphere feels warm and welcoming."
+        </p>
+        <div class="review-author">Guest Review</div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>
+          "Really enjoyed the café vibe. A wonderful spot for
+          coffee, conversations and a relaxed afternoon."
+        </p>
+        <div class="review-author">Guest Review</div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>
+          "A great concept for anyone who loves tasty food
+          and a comfortable place to catch up with friends."
+        </p>
+        <div class="review-author">Guest Review</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+
+<section class="section visit" id="visit">
+  <div class="container visit-grid">
+
+    <div>
+      <div class="eyebrow">We saved you a seat</div>
+
+      <h2>Come hungry.<br>Leave happy.</h2>
+
+      <p style="color:var(--muted);line-height:1.8;font-size:13px">
+        Drop by for your favourite meal, grab a coffee to go
+        or get in touch to plan your next visit.
+      </p>
+
+      <div class="visit-info">
+        <p>📍 <strong>Address</strong><br>
+        Add your restaurant's full address here</p>
+
+        <p>🕒 <strong>Opening Hours</strong><br>
+        Monday – Sunday: 10:00 AM – 10:00 PM</p>
+
+        <p>📞 <strong>Phone</strong><br>
+        +91 XXXXX XXXXX</p>
+      </div>
+
+      <a href="#" id="directionsLink" target="_blank"
+         rel="noopener noreferrer" class="button">
+        Get Directions ↗
+      </a>
+    </div>
+
+    <div class="map-placeholder">
+      <span>📍</span>
+      <strong>Find Your Way to Us</strong>
+      <p>Replace this section with your Google Maps location.</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <a href="#" class="logo">crave<span>&</span>co.</a>
+        <p>
+          Good food, great coffee and moments worth remembering.
+          Your neighbourhood restaurant and café.
+        </p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="#menu">Our Menu</a>
+          <a href="#about">Our Story</a>
+          <a href="#cafe">The Café</a>
+          <a href="#reviews">Guest Reviews</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Get in Touch</h4>
+        <div class="footer-links">
+          <a href="#visit">Location & Hours</a>
+          <a href="#" id="footerWhatsApp">WhatsApp Us</a>
+          <a href="mailto:hello@example.com">Email Us</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Crave & Co. All rights reserved.</span>
+      <span>Made for good food and good company.</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- CART -->
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer"
+       role="dialog" aria-modal="true"
+       aria-labelledby="cartTitle">
+
+  <div class="cart-header">
+    <h3 id="cartTitle">Your Bag</h3>
+    <button class="close-cart" id="closeCart" aria-label="Close cart">
+      ×
+    </button>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-total">
+    <div class="total-row">
+      <span>Total</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+
+    <button class="checkout-btn" id="checkoutBtn">
+      Order on WhatsApp ↗
+    </button>
+  </div>
+
+</aside>
+
+<script>
+/* --------------------------------
+   RESTAURANT CONFIGURATION
+---------------------------------- */
+
+// Replace these details with the actual business details.
+const BUSINESS = {
+  name: "Crave & Co.",
+  whatsapp: "91XXXXXXXXXX",
+  address: "Add your complete restaurant address here",
+  mapsQuery: "Your Restaurant Address, Your City"
+};
+
+/* --------------------------------
+   FOOD MENU
+---------------------------------- */
+
+const products = [
+  {
+    id: 1,
+    name: "Classic Cheeseburger",
+    category: "Burgers",
+    price: 199,
+    rating: "4.9",
+    tag: "BESTSELLER",
+    description: "Juicy burger, melted cheese and fresh veggies.",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 2,
+    name: "Margherita Pizza",
+    category: "Pizza",
+    price: 249,
+    rating: "4.8",
+    tag: "FAVOURITE",
+    description: "Classic cheese, tomato sauce and fresh herbs.",
+    image: "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 3,
+    name: "Creamy Pasta",
+    category: "Food",
+    price: 229,
+    rating: "4.8",
+    tag: "CHEF'S PICK",
+    description: "Creamy pasta tossed with herbs and seasoning.",
+    image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 4,
+    name: "Cappuccino",
+    category: "Drinks",
+    price: 129,
+    rating: "4.9",
+    tag: "COFFEE LOVE",
+    description: "Rich espresso with silky steamed milk.",
+    image: "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 5,
+    name: "Chocolate Brownie",
+    category: "Desserts",
+    price: 149,
+    rating: "4.9",
+    tag: "SWEET TREAT",
+    description: "A rich chocolate dessert for your sweet cravings.",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 6,
+    name: "Garden Fresh Pizza",
+    category: "Pizza",
+    price: 279,
+    rating: "4.7",
+    tag: "VEG FAVOURITE",
+    description: "Colourful vegetables, cheese and a crispy base.",
+    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+  }
+];
+
+let selectedCategory = "All";
+const cart = new Map();
+
+const foodGrid = document.getElementById("foodGrid");
+const cartDrawer = document.getElementById("cartDrawer");
+const overlay = document.getElementById("overlay");
+
+/* --------------------------------
+   RENDER MENU
+---------------------------------- */
+
+function renderProducts() {
+  const filtered = selectedCategory === "All"
+    ? products
+    : products.filter(item => item.category === selectedCategory);
+
+  foodGrid.innerHTML = "";
+
+  if (!filtered.length) {
+    foodGrid.innerHTML =
+      '<div class="empty-state">No items found in this category.</div>';
+    return;
+  }
+
+  filtered.forEach((item, index) => {
+    const card = document.createElement("article");
+    card.className = "food-card reveal";
+    card.style.animationDelay = `${index * 70}ms`;
+
+    card.innerHTML = `
+      <div class="food-image-wrap">
+        <img class="food-image"
+             src="${item.image}"
+             alt="${item.name}"
+             loading="lazy">
+        <span class="food-tag">${item.tag}</span>
+      </div>
+
+      <div class="food-content">
+        <div class="food-top">
+          <h3 class="food-title">${item.name}</h3>
+          <span class="rating">★ ${item.rating}</span>
+        </div>
+
+        <p class="food-description">${item.description}</p>
+
+        <div class="food-bottom">
+          <span class="price">₹${item.price}</span>
+          <button class="add-btn" data-add="${item.id}">
+            + Add to Bag
+          </button>
+        </div>
+      </div>
+    `;
+
+    foodGrid.appendChild(card);
+  });
+}
+
+document.getElementById("filters").addEventListener("click", event => {
+  const button = event.target.closest("[data-category]");
+  if (!button) return;
+
+  selectedCategory = button.dataset.category;
+
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.classList.toggle("active", btn === button);
+  });
+
+  renderProducts();
+});
+
+/* --------------------------------
+   SHOPPING CART
+---------------------------------- */
+
+foodGrid.addEventListener("click", event => {
+  const button = event.target.closest("[data-add]");
+  if (!button) return;
+
+  const id = Number(button.dataset.add);
+  cart.set(id, (cart.get(id) || 0) + 1);
+
+  renderCart();
+
+  const originalText = button.textContent;
+  button.textContent = "✓ Added";
+
+  setTimeout(() => {
+    button.textContent = originalText;
+  }, 900);
+});
+
+function renderCart() {
+  const cartItems = document.getElementById("cartItems");
+
+  const entries = [...cart.entries()];
+  const count = entries.reduce((sum, [, qty]) => sum + qty, 0);
+
+  const total = entries.reduce((sum, [id, qty]) => {
+    const product = products.find(item => item.id === id);
+    return sum + product.price * qty;
+  }, 0);
+
+  document.getElementById("cartCount").textContent = count;
+  document.getElementById("cartTotal").textContent =
+    `₹${total.toLocaleString("en-IN")}`;
+
+  if (!entries.length) {
+    cartItems.innerHTML =
+      '<div class="cart-empty">Your bag is empty.<br><br>Add something delicious! 🍕</div>';
+    return;
+  }
+
+  cartItems.innerHTML = entries.map(([id, qty]) => {
+    const product = products.find(item => item.id === id);
+
+    return `
+      <div class="cart-row">
+        <div>
+          <strong>${product.name}</strong>
+          <small>₹${product.price} each</small>
+
+          <div class="quantity">
+            <button data-change="${id}" data-delta="-1"
+                    aria-label="Decrease quantity">−</button>
+            <span>${qty}</span>
+            <button data-change="${id}" data-delta="1"
+                    aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <strong>₹${(product.price * qty).toLocaleString("en-IN")}</strong>
+      </div>
+    `;
+  }).join("");
+}
+
+document.getElementById("cartItems").addEventListener("click", event => {
+  const button = event.target.closest("[data-change]");
+  if (!button) return;
+
+  const id = Number(button.dataset.change);
+  const delta = Number(button.dataset.delta);
+  const next = (cart.get(id) || 0) + delta;
+
+  if (next <= 0) {
+    cart.delete(id);
+  } else {
+    cart.set(id, next);
+  }
+
+  renderCart();
+});
+
+/* --------------------------------
+   CART OPEN / CLOSE
+---------------------------------- */
+
+function openCart() {
+  cartDrawer.classList.add("open");
+  overlay.classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("closeCart").focus();
+}
+
+function closeCart() {
+  cartDrawer.classList.remove("open");
+  overlay.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("openCart").addEventListener("click", openCart);
+document.getElementById("closeCart").addEventListener("click", closeCart);
+overlay.addEventListener("click", closeCart);
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeCart();
+});
+
+/* --------------------------------
+   WHATSAPP ORDER
+---------------------------------- */
+
+function validWhatsAppNumber() {
+  return /^91\d{10}$/.test(BUSINESS.whatsapp);
+}
+
+document.getElementById("checkoutBtn").addEventListener("click", () => {
+  if (!cart.size) {
+    alert("Your bag is empty! Please add some items first.");
+    return;
+  }
+
+  if (!validWhatsAppNumber()) {
+    alert("Please add the restaurant's real WhatsApp number in the code first.");
+    return;
+  }
+
+  const lines = [...cart.entries()].map(([id, qty]) => {
+    const product = products.find(item => item.id === id);
+    return `${product.name} x ${qty} = ₹${product.price * qty}`;
+  });
+
+  const total = [...cart.entries()].reduce((sum, [id, qty]) => {
+    return sum + products.find(item => item.id === id).price * qty;
+  }, 0);
+
+  const message = [
+    `Hello ${BUSINESS.name}! I'd like to place an order:`,
+    "",
+    ...lines,
+    "",
+    `Total: ₹${total}`,
+    "",
+    "Please confirm availability and delivery/pickup details."
+  ].join("\n");
+
+  const url =
+    `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank", "noopener,noreferrer");
+});
+
+/* --------------------------------
+   MOBILE MENU
+---------------------------------- */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+/* --------------------------------
+   RESTAURANT CONTACT & FOOTER
+---------------------------------- */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("directionsLink").href =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent(BUSINESS.mapsQuery);
+
+const footerWhatsApp = document.getElementById("footerWhatsApp");
+
+if (validWhatsAppNumber()) {
+  footerWhatsApp.href = `https://wa.me/${BUSINESS.whatsapp}`;
+} else {
+  footerWhatsApp.href = "#visit";
+  footerWhatsApp.addEventListener("click", event => {
+    event.preventDefault();
+    document.getElementById("visit").scrollIntoView({
+      behavior: "smooth"
+    });
+    alert("Please add the restaurant's real WhatsApp number in the code first.");
+  });
+}
+/* INITIAL RENDER */
+
+renderProducts();
+renderCart();
+</script>
+<!-- FEEDBACK FORM MODAL -->
+
+<div class="feedback-modal" id="feedbackModal"
+     role="dialog" aria-modal="true"
+     aria-labelledby="feedbackTitle">
+
+  <div class="feedback-box">
+
+    <button class="feedback-close" id="closeFeedback"
+            aria-label="Close feedback form">
+      &times;
+    </button>
+
+    <span class="feedback-label">We value your opinion</span>
+
+    <h2 id="feedbackTitle">How was your experience?</h2>
+
+    <p class="feedback-subtitle">
+      Your feedback helps us serve you better.
+      Tell us what you loved or what we can improve.
+    </p>
+
+    <form id="feedbackForm">
+
+      <div class="feedback-field">
+        <label for="feedbackName">Your Name</label>
+        <input type="text" id="feedbackName"
+               placeholder="Enter your name"
+               maxlength="80" required>
+      </div>
+
+      <div class="feedback-field">
+        <label>Your Rating</label>
+
+        <div class="feedback-stars" id="feedbackStars">
+          <button type="button" data-rating="1"
+                  aria-label="1 star">★</button>
+          <button type="button" data-rating="2"
+                  aria-label="2 stars">★</button>
+          <button type="button" data-rating="3"
+                  aria-label="3 stars">★</button>
+          <button type="button" data-rating="4"
+                  aria-label="4 stars">★</button>
+          <button type="button" data-rating="5"
+                  aria-label="5 stars">★</button>
+        </div>
+
+        <p class="feedback-rating-text" id="ratingText">
+          Select your rating
+        </p>
+      </div>
+
+      <div class="feedback-field">
+        <label for="feedbackCategory">What is your feedback about?</label>
+
+        <select id="feedbackCategory" required>
+          <option value="">Select a category</option>
+          <option value="Food Quality">Food Quality</option>
+          <option value="Taste">Taste</option>
+          <option value="Service">Customer Service</option>
+          <option value="Ambience">Restaurant Ambience</option>
+          <option value="Value for Money">Value for Money</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="feedback-field">
+        <label for="feedbackMessage">Your Feedback</label>
+
+        <textarea id="feedbackMessage"
+                  placeholder="Tell us about your experience..."
+                  maxlength="1000" required></textarea>
+      </div>
+
+      <button type="submit" class="feedback-submit">
+        Submit Feedback →
+      </button>
+
+      <div class="feedback-success" id="feedbackSuccess"
+           role="status" aria-live="polite">
+        Thank you for sharing your feedback!
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  const modal = document.getElementById("feedbackModal");
+  const openBtn = document.getElementById("openFeedback");
+  const closeBtn = document.getElementById("closeFeedback");
+  const form = document.getElementById("feedbackForm");
+  const stars = document.querySelectorAll(
+    "#feedbackStars button"
+  );
+  const ratingText = document.getElementById("ratingText");
+  const success = document.getElementById("feedbackSuccess");
+
+  let selectedRating = 0;
+
+  const ratingLabels = {
+    1: "Poor",
+    2: "Fair",
+    3: "Good",
+    4: "Very Good",
+    5: "Excellent!"
+  };
+
+  function openModal() {
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+
+    setTimeout(() => {
+      document.getElementById("feedbackName").focus();
+    }, 100);
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
+    }
+  });
+
+  stars.forEach(function (star) {
+    star.addEventListener("click", function () {
+      selectedRating = Number(star.dataset.rating);
+
+      stars.forEach(function (item) {
+        const active =
+          Number(item.dataset.rating) <= selectedRating;
+
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+
+      ratingText.textContent = ratingLabels[selectedRating];
+    });
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (selectedRating < 1) {
+      ratingText.textContent = "Please select a star rating.";
+      return;
+    }
+
+    const feedback = {
+      name: document.getElementById("feedbackName").value.trim(),
+      rating: selectedRating,
+      category: document.getElementById("feedbackCategory").value,
+      message: document.getElementById("feedbackMessage").value.trim(),
+      submittedAt: new Date().toISOString()
+    };
+
+    if (!feedback.name || !feedback.category || !feedback.message) {
+      return;
+    }
+
+    /*
+      Demo only:
+      The feedback is saved in this browser.
+      For real customer feedback collection,
+      connect a secure backend or database.
+    */
+
+    try {
+      const existing = JSON.parse(
+        localStorage.getItem("restaurantFeedback") || "[]"
+      );
+
+      if (!Array.isArray(existing)) {
+        throw new Error("Invalid feedback data");
+      }
+
+      existing.push(feedback);
+
+      localStorage.setItem(
+        "restaurantFeedback",
+        JSON.stringify(existing)
+      );
+
+      success.style.display = "block";
+      success.textContent =
+        "Thank you, " + feedback.name +
+        "! Your feedback has been saved in this browser.";
+
+      form.reset();
+
+      selectedRating = 0;
+
+      stars.forEach(function (star) {
+        star.classList.remove("active");
+        star.setAttribute("aria-pressed", "false");
+      });
+
+      ratingText.textContent = "Select your rating";
+
+      setTimeout(function () {
+        success.style.display = "none";
+        closeModal();
+      }, 2200);
+
+    } catch (error) {
+      success.style.display = "block";
+      success.textContent =
+        "Feedback could not be saved. Please try again.";
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
