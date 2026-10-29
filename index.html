@@ -323,6 +323,48 @@
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
       .reveal { opacity: 1; transform: none; }
     }
+    /* Mobile Responsive Fix */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container,
+  .section,
+  main,
+  header,
+  footer {
+    max-width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  h1 {
+    overflow-wrap: break-word;
+  }
+
+  img {
+    height: auto;
+  }
+}
   </style>
 </head>
 <body>
